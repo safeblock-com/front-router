@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build Docker Image and Run Tests
+    permissions:
+      deployments: read
+      contents: read
+      packages: read
     steps:
       - uses: actions/checkout@v4
       - name: Test
