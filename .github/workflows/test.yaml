@@ -1,0 +1,14 @@
+name: Test
+on:
+  push:
+    branches: '*'
+  pull_request:
+    branches: '*'
+
+jobs:
+  build:
+    name: Build Docker Image and Run Tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: make

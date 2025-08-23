@@ -1,0 +1,19 @@
+services:
+  router:
+    volumes:
+      - ./templates:/etc/nginx/templates:ro
+    build: .
+    environment:
+      SERVER1: server1:${NGINX_PORT}
+      SERVER2: server2:${NGINX_PORT}
+      SERVER3: server3:${NGINX_PORT}
+      NGINX_RESOLVER: 127.0.0.11
+    ports:
+      - "${NGINX_PORT}:${NGINX_PORT}"
+
+  server1:
+    image: ghcr.io/safeblock-com/dex-frontend:1.13.3-production
+  server2:
+    image: ghcr.io/safeblock-com/dex-frontend:1.13.1-production
+  server3:
+    image: ghcr.io/safeblock-com/dex-frontend:1.13.0-production
