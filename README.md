@@ -26,18 +26,3 @@ make
 ```sh
 make test
 ```
-
-Проверить доступ к определённому хосту:
-
-```sh
-PROXY_HOST=ethereum.node.safeblock.work PROXY_PROTO=http make
-PROXY_HOST=ethereum.nodevi.com PROXY_PROTO=https make
-```
-
-# Сборка и публикация релизного образа
-
-Через [релизы в github](https://github.com/safeblock-com/ankira/releases/new)
-
-# Подобные проекты
-
-* https://github.com/chainstacklabs/eth-proxy
