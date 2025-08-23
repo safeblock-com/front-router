@@ -1,11 +1,5 @@
 name: Build And Push Image
 on:
-  push:
-    branches: '*'
-
-  pull_request:
-    branches: '*'
-
   release:
     types: [ published ]
 

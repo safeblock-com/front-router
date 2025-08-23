@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     name: Build Docker Image and Run Tests
     steps:
       - uses: actions/checkout@v4
