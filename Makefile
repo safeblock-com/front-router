@@ -29,7 +29,7 @@ test-fallback-%:
 	@/bin/echo -n "Test fallback asset /${PATH_TO_TEST} - "
 	@(${CURL} -s ${URL}/${PATH_TO_TEST} | ${TEST_RESPONSE} && ${OK}) || ${FAILED}
 
-test-fallbacks: test-fallback-FILE1 test-fallback-FILE2 test-fallback-FILE0
+test-fallbacks: test-fallback-FILE0 test-fallback-FILE1 test-fallback-FILE2
 
 test-homepage:
 	@/bin/echo -n "Test home page - "
