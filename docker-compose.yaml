@@ -4,16 +4,16 @@ services:
       - ./templates:/etc/nginx/templates:ro
     build: .
     environment:
+      SERVER0: server0:${NGINX_PORT}
       SERVER1: server1:${NGINX_PORT}
       SERVER2: server2:${NGINX_PORT}
-      SERVER3: server3:${NGINX_PORT}
       NGINX_RESOLVER: 127.0.0.11
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
 
-  server1:
+  server0:
     image: ghcr.io/safeblock-com/dex-frontend:1.13.3-production
-  server2:
+  server1:
     image: ghcr.io/safeblock-com/dex-frontend:1.13.1-production
-  server3:
+  server2:
     image: ghcr.io/safeblock-com/dex-frontend:1.13.0-production
