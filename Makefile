@@ -1,3 +1,6 @@
+include .env
+export
+
 REVERSE_HOST=localhost
 NGINX_PORT?=8000
 URL=http://${REVERSE_HOST}:${NGINX_PORT}
@@ -5,10 +8,7 @@ FAILED=echo "❌"
 OK=echo "✅"
 CURL=/usr/bin/curl
 
-FILE0=app-store-BrM1Qdjy.js
-FILE1=app-store-3A5cQjTW.js
-FILE2=app-store-CafL0y5z.js
-TEST_RESPONSE=/usr/bin/grep /assets/index > /dev/null
+TEST_RESPONSE=/usr/bin/grep ${PATH_TO_TEST} > /dev/null
 
 all: up wait env test
 

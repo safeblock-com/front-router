@@ -1,0 +1,6 @@
+services:
+  test-image:
+    build: 
+      context: .
+      args:
+        FILE: test123

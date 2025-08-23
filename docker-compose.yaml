@@ -12,8 +12,17 @@ services:
       - "${NGINX_PORT}:${NGINX_PORT}"
 
   server0:
-    image: ghcr.io/safeblock-com/dex-frontend:1.13.3-production
+    build: 
+      context: ./test_image
+      args:
+        FILE: ${FILE0}
   server1:
-    image: ghcr.io/safeblock-com/dex-frontend:1.13.1-production
+    build: 
+      context: ./test_image
+      args:
+        FILE: ${FILE1}
   server2:
-    image: ghcr.io/safeblock-com/dex-frontend:1.13.0-production
+    build: 
+      context: ./test_image
+      args:
+        FILE: ${FILE2}
