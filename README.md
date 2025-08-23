@@ -1,8 +1,10 @@
 # front-router
 
+[![Test](https://github.com/safeblock-com/front-router/actions/workflows/test.yaml/badge.svg)](https://github.com/safeblock-com/front-router/actions/workflows/test.yaml)
+
 Решаемая проблема - https://t.me/c/2182995616/18/17144
 
-Веб-сервер который занимается роутингом пользовательских запросов на
+fallback Веб-сервер который занимается роутингом пользовательских запросов на
 исторические версии фронтовых приложений.
 
 Этот репозиторий хранит Dockerfile для построения образа на основе nginx.
