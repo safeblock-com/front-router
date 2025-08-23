@@ -22,7 +22,7 @@ wait:
 	@echo Wait
 	sleep 3
 
-test: test-version test-homepage test-fallbacks
+test: test-version test-homepage test-404 test-fallbacks
 
 PATH_TO_TEST=${${*}}
 test-fallback-%:
@@ -30,6 +30,10 @@ test-fallback-%:
 	@(${CURL} -s ${URL}/${PATH_TO_TEST} | ${TEST_RESPONSE} && ${OK}) || ${FAILED}
 
 test-fallbacks: test-fallback-FILE0 test-fallback-FILE1 test-fallback-FILE2
+
+test-404:
+	@/bin/echo -n "Test 404 page - "
+	@(${CURL} -s ${URL}/not-found | grep 404 > /dev/null && ${OK}) || ${FAILED}
 
 test-homepage:
 	@/bin/echo -n "Test home page - "
