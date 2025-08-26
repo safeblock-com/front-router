@@ -1,4 +1,5 @@
 FROM nginx:alpine
+RUN rm /usr/share/nginx/html/index.html
 COPY ./public /usr/share/nginx/html/
 COPY ./templates /etc/nginx/templates/
 ARG NGINX_PORT=8000
